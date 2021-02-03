@@ -2,16 +2,14 @@ var d = document.getElementById("dibujito");
 var lienzo = d.getContext("2d");
 console.log(lienzo);
 
-lienzo.beginPath(); //inicia
-lienzo.strokeStyle = "blue"; //color de la linea
-lienzo.moveTo(50, 10); //moverse al punto en X punto en Y
-lienzo.lineTo(200, 2); //crear linea
-lienzo.stroke(); // cerrar la linea
-lienzo.closePath(); // termnina
+dibujarLinea("pink", 10, 300, 220, 10);
+dibujarLinea("yellow", 300, 10, 10, 220);
 
-lienzo.beginPath();
-lienzo.strokeStyle = "red";
-lienzo.moveTo(100, 10);
-lienzo.lineTo(290, 200);
-lienzo.stroke();
-lienzo.closePath();
+function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal) {
+  lienzo.beginPath(); //inicia
+  lienzo.strokeStyle = color; //color de la linea
+  lienzo.moveTo(xinicial, yinicial); //moverse al punto en X punto en Y
+  lienzo.lineTo(xfinal, yfinal); //crear linea
+  lienzo.stroke(); // cerrar la linea
+  lienzo.closePath(); // termnina
+}
