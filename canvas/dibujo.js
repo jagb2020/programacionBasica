@@ -1,9 +1,28 @@
 var d = document.getElementById("dibujito");
 var lienzo = d.getContext("2d");
-console.log(lienzo);
+var lineas = 30;
+var l = 0;
+var yi, xf;
+var colorcito = "#faa";
 
-dibujarLinea("pink", 10, 300, 220, 10);
-dibujarLinea("yellow", 300, 10, 10, 220);
+// while (l < lineas) {
+//   yi = 10 * l;
+//   xf = 10 * (l + 1);
+//   dibujarLinea(colorcito, 0, yi, xf, 300);
+//   console.log("lineas " + l);
+//   // l = l + 1;
+//   l++;
+// }
+
+for (l = 0; l < lineas; l++) {
+  yi = 10 * l;
+  xf = 10 * (l + 1);
+  dibujarLinea(colorcito, 0, yi, xf, 300);
+  console.log("lineas " + l);
+}
+
+dibujarLinea("blue", 0, 0, 0, 300);
+dibujarLinea("blue", 0, 300, 300, 300);
 
 function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal) {
   lienzo.beginPath(); //inicia
