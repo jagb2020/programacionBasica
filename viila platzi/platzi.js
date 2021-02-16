@@ -11,6 +11,11 @@ var vaca = {
   cargaOk: false,
 };
 
+var pollo = {
+  url: "pollo.png",
+  cargaOk: false,
+};
+
 var cantidad = aleatorio(5, 15);
 
 fondo.imagen = new Image();
@@ -21,6 +26,10 @@ vaca.imagen = new Image();
 vaca.imagen.src = vaca.url;
 vaca.imagen.addEventListener("load", cargarVacas);
 
+pollo.imagen = new Image();
+pollo.imagen.src = pollo.url;
+pollo.imagen.addEventListener("load", cargarPollos);
+
 function cargarfondo() {
   fondo.cargaOk = true;
   dibujar();
@@ -28,6 +37,11 @@ function cargarfondo() {
 
 function cargarVacas() {
   vaca.cargaOk = true;
+  dibujar();
+}
+
+function cargarPollos() {
+  pollo.cargaOk = true;
   dibujar();
 }
 
@@ -43,6 +57,16 @@ function dibujar() {
       var x = x * 40;
       var y = y * 40;
       papel.drawImage(vaca.imagen, x, y);
+    }
+  }
+  if (pollo.cargaOk == true) {
+    console.log(cantidad);
+    for (var v = 0; v < cantidad; v++) {
+      var x = aleatorio(0, 10);
+      var y = aleatorio(0, 10);
+      var x = x * 40;
+      var y = y * 40;
+      papel.drawImage(pollo.imagen, x, y);
     }
   }
 }
